@@ -6,6 +6,7 @@
     <title>UtilBox</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
     <header>
@@ -41,19 +42,24 @@
                 <button i class="fa-thin fa-download"></i> Baixar</button>
                
             </div>
-            <div class="tool">
-                <h2>Gerador de QRcode </h2>
+            
+           <div class="tool">
+                <h2>Gerador de QRcode</h2>
                 <p>Descrição da ferramenta 3.</p>
-                <input type="link" placeholder="Cole seu link aqui">
-                <button i class="fa-thin fa-qrcode"></i> Gerar</button>
-                
+                <input type="text" id="qrcode_input" placeholder="Cole seu link aqui">
+                <button onclick="gerar_qrcode()">Gerar</button>
             </div>
+            
             <div class="tool">
-                <h2>QRcode </h2>
+                <h2>QRcode</h2>
                 <h3>mostra o QRcode</h3>
-                <button i class="fa-solid fa-qrcode"></i>  copiar</button>
-                
+                <div class="qrimg"></div>
+                <a id="baixarLink" href="#" download="qrcode.png" style="display: none;">
+                    📥 Baixar QR Code
+                </a>
+                <button onclick="copiarLink()">Copiar</button> <!-- Ajustado o botão de copiar -->
             </div>
+            
         </section>
         <section class="about">
             <h2>Sobre nós</h2>
@@ -71,5 +77,6 @@
                 </div>
             </div>
         </section>
+    <script src="javascript.js"></script>
 </body>
 </html>
